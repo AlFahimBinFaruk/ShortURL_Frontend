@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { AppAlertProvider } from "./contexts/alertContext";
+import { AppProvider } from "./contexts/appContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppAlertProvider>
+    <AppProvider>
       <App />
-    </AppAlertProvider>
+    </AppProvider>
   </React.StrictMode>
 );
 

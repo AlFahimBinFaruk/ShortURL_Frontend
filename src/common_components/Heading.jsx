@@ -1,4 +1,5 @@
 import { Text } from "@mantine/core";
+import { Link } from "react-router-dom";
 function Heading() {
   return (
     <Text
@@ -9,7 +10,7 @@ function Heading() {
       size="xl"
       weight={700}
     >
-      ShortURL
+      <Link to="/">ShortURL</Link>
     </Text>
   );
 }

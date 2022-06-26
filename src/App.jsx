@@ -14,17 +14,17 @@ function App() {
         <Box sx={{ minWidth: 300 }}>
           {/* alert */}
           <Alert />
-          {/* heading */}
-          <Heading />
-          {/* routes start */}
           <BrowserRouter>
+            {/* heading */}
+            <Heading />
+            {/* routes start */}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/shortner" element={<Shortner />} />
               <Route path="*" element={<PageNotFound />} />
             </Routes>
+            {/* routes end */}
           </BrowserRouter>
-          {/* routes end */}
         </Box>
       </Center>
     </div>

@@ -1,35 +1,22 @@
-import { useGlobalAlertContext } from "../contexts/alertContext";
-const Alert = () => {
-  let { showAlert, setShowAlert } = useGlobalAlertContext();
+import { useGlobalAppContext } from "../contexts/appContext";
+import { Alert } from "@mantine/core";
+import { AlertCircle } from "tabler-icons-react";
+
+const AlertComponent = () => {
+  let { showAlert } = useGlobalAppContext();
   return (
     <>
       {showAlert && (
-        <div
-          className={`alert alert-${showAlert?.color} alert-fixed fade ${
-            showAlert ? "show" : "d-none"
-          }`}
-          role="alert"
-          style={{
-            width: "450px",
-            right: "1%",
-            top: "15%",
-            bottom: "unset",
-            left: "unset",
-            transform: "unset",
-          }}
+        <Alert
+          icon={<AlertCircle size={16} />}
+          title="Bummer!"
+          color={`${showAlert?.color}`}
         >
-          <div className="d-flex justify-content-between">
-            <strong>{showAlert?.msg}!</strong>
-            <button
-              type="button"
-              className="btn-close"
-              onClick={() => setShowAlert(false)}
-            ></button>
-          </div>
-        </div>
+          {showAlert?.msg}
+        </Alert>
       )}
     </>
   );
 };
 
-export default Alert;
+export default AlertComponent;
